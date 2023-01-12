@@ -44,12 +44,12 @@ phases:
     - echo Build completed on `date` 
     - echo pushing to repo
     # update the following line with the URI of your own ECR repository
-    - docker tag IMAGE_REPO_NAME:latest
-    - docker push IMAGE_REPO_NAME:latest
+    - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG
+    - docker push $IMAGE_REPO_NAME:$IMAGE_TAG
     # - docker push web-api-gateway:$IMAGE_TAG
     - echo Writing image definitions file... 
     #- printf '[{"ImageURI":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
-    - printf '{"ImageURI":"%s"}' awspractice/web-api-gateway:latest > imageDetail.json
+    - printf '{"ImageURI":"%s"}' $IMAGE_REPO_NAME:$IMAGE_TAG > imageDetail.json
 artifacts:
   files:
     - imageDetail.json    
