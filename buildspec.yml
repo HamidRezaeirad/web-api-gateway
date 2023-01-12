@@ -44,8 +44,8 @@ phases:
     - echo Build completed on `date` 
     - echo pushing to repo
     # update the following line with the URI of your own ECR repository
-    - docker tag awspractice/web-api-gateway:latest 478557581779.dkr.ecr.eu-west-1.amazonaws.com/awspractice/web-api-gateway:latest
-    - docker push 478557581779.dkr.ecr.eu-west-1.amazonaws.com/awspractice/web-api-gateway:latest
+    - docker tag $IMAGE_REPO_NAME:latest
+    - docker push $IMAGE_REPO_NAME:latest
     # - docker push web-api-gateway:$IMAGE_TAG
     - echo Writing image definitions file... 
     #- printf '[{"ImageURI":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
